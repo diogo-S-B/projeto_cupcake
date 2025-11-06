@@ -1,0 +1,5 @@
+table { width: 90%; margin: 20px auto; border-collapse: collapse; }
+th, td { padding: 10px; border: 1px solid #ddd; text-align: center; }
+th { background-color: #a39568; color: white; }
+.status-pendente { color: orange; font-weight: bold; }
+.status-entregue { color: green; font-weight: bold; }

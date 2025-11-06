@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Carrinho de Cupcakes</title>
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/cart_style/cart.css">
+</head>
+<body>
+  <header>
+    <h1>Meus Pedidos</h1>
+    <nav>
+      <a href="catalog.html">Catálogo</a>
+      <a href="orders.html">Pedidos</a>
+      <a href="#" onclick="logout()">Sair</a>
+    </nav>
+  </header>
+
+  <h2 style="text-align:center; margin-top:20px;">Seu Carrinho</h2>
+  <table id="cart-table">
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Quantidade</th>
+        <th>Preço unitário</th>
+        <th>Subtotal</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <div id="total">Total: R$ 0.00</div>
+
+  <div style="text-align:center;">
+    <button class="btn" onclick="openPaymentModal()">Finalizar Pedido</button>
+  </div>
+
+  <!-- Modal de Pagamento -->
+  <div id="payment-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closePaymentModal()">&times;</span>
+      <h2>Pagamento</h2>
+      <p>Total: <span id="modal-total">0.00</span> R$</p>
+
+      <label for="payment-method">Método de Pagamento:</label><br>
+      <select id="payment-method">
+        <option value="credito">Cartão de Crédito</option>
+        <option value="debito">Cartão de Débito</option>
+        <option value="pix">PIX</option>
+      </select>
+
+      <div id="payment-details" style="margin-top:15px;"></div>
+
+      <button id="pay-btn" class="btn" style="margin-top:10px;">Confirmar Pagamento</button>
+    </div>
+  </div>
+</main>
+<footer>
+  <p>© 2025 Cupcake App — Carrinho</p>
+</footer>
+
+<script src="js/cart.js"></script>
+
+<script>
+  // 🔐 Logout
+  function logout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    localStorage.removeItem("cart");
+    window.location.href = "index.html";
+  }
+
+  // 💰 Simulação de Pagamento
+  const modal = document.getElementById("payment-modal");
+  const modalTotal = document.getElementById("modal-total");
+  const payBtn = document.getElementById("pay-btn");
+  const paymentMethod = document.getElementById("payment-method");
+  const paymentDetails = document.getElementById("payment-details");
+
+  function openPaymentModal() {
+    const totalText = document.getElementById("total").textContent.replace("Total: R$ ", "");
+    modalTotal.textContent = totalText;
+    modal.style.display = "block";
+    updatePaymentDetails();
+  }
+
+  function closePaymentModal() {
+    modal.style.display = "none";
+  }
+
+  // Mostra campos diferentes conforme o tipo de pagamento
+  function updatePaymentDetails() {
+    const method = paymentMethod.value;
+    let html = "";
+
+    if (method === "pix") {
+      html = `
+        <p>Escaneie o QR Code abaixo para pagar:</p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data=PagamentoCupcake&size=150x150" alt="QR Code PIX">
+      `;
+    } else {
+      html = `
+        <input type="text" placeholder="Número do cartão" maxlength="16"><br>
+        <input type="text" placeholder="Nome no cartão"><br>
+        <input type="text" placeholder="Validade (MM/AA)" maxlength="5"><br>
+        <input type="text" placeholder="CVV" maxlength="3">
+      `;
+    }
+
+    paymentDetails.innerHTML = html;
+  }
+
+  paymentMethod.addEventListener("change", updatePaymentDetails);
+
+  // 🧁 Confirma o pagamento e finaliza pedido
+  payBtn.addEventListener("click", async () => {
+    payBtn.disabled = true;
+    payBtn.textContent = "Processando...";
+
+    // Simulação de atraso de processamento
+    setTimeout(async () => {
+      alert("✅ Pagamento aprovado com sucesso!");
+      closePaymentModal();
+      await checkout(); // chama a função do cart.js
+    }, 1500);
+  });
+
+  // Fecha modal ao clicar fora
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      closePaymentModal();
+    }
+  };
+</script>
+</body>
+</html>

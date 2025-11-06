@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --primary: #e07a5f;
+  --secondary: #f4f1de;
+  --accent: #81b29a;
+  --warning: #f2cc8f;
+  --dark: #a39568;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--secondary);
+  color: #3d405b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+header button {
+  background: white;
+  color: var(--primary);
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+header button:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.container {
+  flex: 1;
+  padding: 2rem;
+}
+
+h2 {
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+thead {
+  background: var(--dark);
+  color: white;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.status {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status.Pendente {
+  color: var(--primary);
+}
+
+.status.Entregue {
+  color: var(--accent);
+}
+
+.status.Aberto {
+  color: var(--warning);
+}
+
+.btn {
+  border: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.btn.entregue {
+  background: var(--accent);
+}
+.btn.entregue:hover {
+  background: #6a9f84;
+}
+
+.btn.aberto {
+  background: var(--warning);
+  color: #3d3d3d;
+}
+.btn.aberto:hover {
+  background: #eabf67;
+}
+
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.loading {
+  text-align: center;
+  font-style: italic;
+  color: var(--dark);
+}

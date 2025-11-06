@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Meus Pedidos</title>
+  <link rel="stylesheet" href="css/orders_style/orders.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+<header>
+  <h1>Meus Pedidos</h1>
+  <nav>
+    <a href="catalog.html">Catálogo</a>
+    <a href="cart.html">Carrinho</a>
+    <a href="#" onclick="logout()">Sair</a>
+  </nav>
+</header>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID do Pedido</th>
+      <th>Itens</th>
+      <th>Total</th>
+      <th>Status</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+  <tbody id="orders-body">
+    <tr><td colspan="5">Carregando pedidos...</td></tr>
+  </tbody>
+</table>
+
+<footer>
+  <p>© 2025 Cupcake App — Pedidos</p>
+</footer>
+
+<script>
+  // Verifica login
+  const token = localStorage.getItem("token");
+  const userData = localStorage.getItem("user");
+  if (!token || !userData) {
+    alert("Você precisa estar logado para acessar seus pedidos.");
+    window.location.href = "index.html";
+  }
+
+  const user = JSON.parse(userData);
+  const userId = user.id;
+
+  async function fetchOrders() {
+    const ordersBody = document.getElementById("orders-body");
+    try {
+      const response = await fetch(`http://127.0.0.1:8000/orders/user/${userId}`, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      });
+
+      if (!response.ok) {
+        ordersBody.innerHTML = `<tr><td colspan="5">Erro ao carregar pedidos (não autorizado).</td></tr>`;
+        return;
+      }
+
+      const orders = await response.json();
+
+      if (orders.length === 0) {
+        ordersBody.innerHTML = `<tr><td colspan="5">Nenhum pedido encontrado.</td></tr>`;
+        return;
+      }
+
+      ordersBody.innerHTML = "";
+      orders.forEach(order => {
+        const items = Array.isArray(order.items)
+          ? order.items.map(i => `${i.quantity}x ${i.product?.name}`).join(", ")
+          : "Nenhum item encontrado";
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${order.id}</td>
+          <td>${items}</td>
+          <td>R$ ${order.total.toFixed(2)}</td>
+          <td class="status-${order.status.toLowerCase()}">${order.status}</td>
+          <td>${new Date(order.created_at).toLocaleString()}</td>
+        `;
+        ordersBody.appendChild(tr);
+      });
+    } catch (error) {
+      console.error("Erro ao buscar pedidos:", error);
+      ordersBody.innerHTML = `<tr><td colspan="5">Erro ao carregar pedidos.</td></tr>`;
+    }
+  }
+
+  function logout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    localStorage.removeItem("cart");
+    window.location.href = "index.html";
+  }
+
+  fetchOrders();
+</script>
+
+</body>
+</html>

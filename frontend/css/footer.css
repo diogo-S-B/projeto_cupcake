@@ -1,0 +1,12 @@
+footer {
+  background: #63562c;
+  color: #ffffff;
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+
+  position: fixed; /* fixa o footer na tela */
+  bottom: 0;       /* encosta no fundo da janela */
+  left: 0;
+  width: 100%;     /* ocupa toda a largura */
+}

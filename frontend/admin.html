@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Cupcake App</title>
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+<header>
+  <h1>🍰 Painel do Administrador</h1>
+  <nav>
+    <button id="logout">Sair</button>
+  </nav>
+</header>
+
+<main class="container">
+  <h2>📦 Pedidos Recebidos</h2>
+  <table id="pedidos-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Usuário</th>
+        <th>Itens</th>
+        <th>Total</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="pedidos-body">
+      <tr><td colspan="6" class="loading">Carregando pedidos...</td></tr>
+    </tbody>
+  </table>
+</main>
+
+<footer>
+  <p>© 2025 Cupcake App — Painel do Administrador</p>
+</footer>
+
+<script src="js/admin.js" defer></script>
+</body>
+</html>

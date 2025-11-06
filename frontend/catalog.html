@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Catálogo de Cupcakes</title>
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/catalog_style/catalog.css">
+</head>
+<body>
+<header>
+  <h1>🍰 Cupcake App</h1>
+  <nav>
+    <a href="cart.html">Carrinho</a>
+    <a href="orders.html">Pedidos</a>
+    <a href="#" onclick="logout()">Sair</a>
+  </nav>
+</header>
+
+<h2 style="text-align:center; margin-top:20px;">Catálogo de Cupcakes</h2>
+<div class="catalog-container" id="catalog">
+  <!-- Os cupcakes serão renderizados aqui via JS -->
+</div>
+
+<footer>
+  <p>© 2025 Cupcake App — Catalogo</p>
+</footer>
+<a href="#" onclick="logout()">Sair</a>
+
+<script>
+  function logout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    localStorage.removeItem("cart");
+    window.location.href = "login.html";
+  }
+</script>
+<script src="js/catalog.js"></script>
+</body>
+</html>
