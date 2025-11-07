@@ -9,7 +9,7 @@ const ordersBody = document.getElementById("orders-body");
 async function fetchOrders() {
     try {
         const userId = 1;  // Substitua pelo ID do usuário logado
-        const response = await fetch(`http://127.0.0.1:8000/orders/user/${userId}`);
+        const response = await fetch(`https://projeto-cupcake-12.onrender.com/orders/user/${userId}`);
         
         if (!response.ok) {
             ordersBody.innerHTML = `<tr><td colspan="5">Não foi possível carregar os pedidos.</td></tr>`;
