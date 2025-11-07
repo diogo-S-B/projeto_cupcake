@@ -55,7 +55,7 @@ def atualizar_status_pedido(
     if not pedido:
         raise HTTPException(status_code=404, detail="Pedido não encontrado")
 
-    if status not in ["Pendente", "Aguardando Pagamento", "Pago", "Cancelado"]:
+    if status not in ["Pendente", "Entregue", "Pago", "Cancelado"]:
         raise HTTPException(status_code=400, detail="Status inválido")
 
     pedido.status = status
