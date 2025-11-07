@@ -87,11 +87,6 @@ def listar_pedidos_usuario(
     db: Session = Depends(get_db),
     current_user: models.User = Depends(utils.get_current_user)
 ):
-    if current_user.id != user_id and not current_user.is_admin:
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="Você não tem permissão para visualizar pedidos de outros usuários"
-        )
 
     orders = (
         db.query(models.Order)
