@@ -7,10 +7,8 @@
   Credenciais Admin (para teste):
   E-mail: admin@admin.com
   Senha: 1234
-
+//
 **Tecnologias Utilizadas**:
-
-
 
   BackEnd:
     Liguagem: Python 
@@ -28,7 +26,7 @@
     SGBD: MySQL
     Hospedagem: Aiven
     Link: cupcake-diguroos-1a48.e.aivencloud.com
-
+//
 
 
 **Descrição do Projeto**
