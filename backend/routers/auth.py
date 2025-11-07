@@ -24,7 +24,7 @@ def register(user: schemas.UserCreate, db: Session = Depends(get_db)):
     return new_user
 
 
-# ✅ Aceita tanto JSON quanto o formato OAuth2 do Swagger
+
 @router.post("/login")
 def login(
     form_data: OAuth2PasswordRequestForm = Depends(),
