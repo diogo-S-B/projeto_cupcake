@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-MYSQL_URL = "mysql+mysqlconnector://root:Projetocupcake123@localhost:3306/cupcake_app"
+MYSQL_URL = "mysql+mysqlconnector://avnadmin:AVNS_MHbvjkqsU7rk8B_PWMG@localhost:15718/cupcake_app"
 
 engine = create_engine(MYSQL_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
