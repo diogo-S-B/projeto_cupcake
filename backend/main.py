@@ -11,7 +11,7 @@ app = FastAPI(title="Cupcake App API 🍰")
 
 origins = [
     "http://localhost:8080",   
-    "projeto-cupcake-six.vercel.app", 
+    "https://projeto-cupcake-six.vercel.app", 
 ]
 
 app.add_middleware(
