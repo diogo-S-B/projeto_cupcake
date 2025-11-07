@@ -29,6 +29,7 @@ ___
     Link: cupcake-diguroos-1a48.e.aivencloud.com
 ___
 </br>
+
 **Descrição do Projeto**
 
 O projeto CupCake App foi desenvolvido para atender as principais funcionalidades de uma loja virtual que tem como objetivo digitalizar seus processos de venda.
