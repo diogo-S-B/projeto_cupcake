@@ -1,50 +1,76 @@
-🧁 **Cupcake App** - Projeto Integrador em Engenharia de Software II
+# 🧁 **Cupcake App**  
+### Projeto Integrador — Engenharia de Software II
 
-🚀 **Link da Aplicação** (Deploy)
+---
 
-  Aplicação: https://projeto-cupcake-six.vercel.app/
+## 🚀 **Link da Aplicação (Deploy)**
+🔗 **Aplicação Web:** [https://projeto-cupcake-six.vercel.app/](https://projeto-cupcake-six.vercel.app/)
 
-  Credenciais Admin (para teste):
-  E-mail: admin@admin.com
-  Senha: 1234
-</br>
-___
-**Tecnologias Utilizadas**:
+👤 **Credenciais Admin (para teste):**  
+- **E-mail:** `admin@admin.com`  
+- **Senha:** `1234`
 
-  BackEnd:
-    Liguagem: Python 
-    Framework: FastAPI
-    Hospedagem: Render
-    Link: https://projeto-cupcake-12.onrender.com
+---
 
-  FrontEnd:
-    Linguagem: JavaScript
-    Estilização: CSS
-    Hospedagem: Vercel
-    Link: https://projeto-cupcake-six.vercel.app/
-    
-  DataBase:
-    SGBD: MySQL
-    Hospedagem: Aiven
-    Link: cupcake-diguroos-1a48.e.aivencloud.com
-___
-</br>
+## ⚙️ **Tecnologias Utilizadas**
 
-**Descrição do Projeto**
+### 🖥️ **Backend**
+- **Linguagem:** Python  
+- **Framework:** FastAPI  
+- **Hospedagem:** Render  
+- 🌐 [Acessar API](https://projeto-cupcake-12.onrender.com)
 
-O projeto CupCake App foi desenvolvido para atender as principais funcionalidades de uma loja virtual que tem como objetivo digitalizar seus processos de venda.
+### 💻 **Frontend**
+- **Linguagem:** JavaScript  
+- **Estilização:** CSS  
+- **Hospedagem:** Vercel  
+- 🌐 [Acessar Aplicação](https://projeto-cupcake-six.vercel.app/)
 
-Funcionalidades
+### 🗄️ **Banco de Dados**
+- **SGBD:** MySQL  
+- **Hospedagem:** Aiven  
+- 🔗 `cupcake-diguroos-1a48.e.aivencloud.com`
 
-  Para clientes:
-    Autenticação: Login/Cadastro;
-    Catalogo: Selecionar quantidade e vizualizar os produtos;
-    Processo de compra: Adicionar/Remover produtos do carrinho e por fim selecionar o método de pagamento(Simulado) sendo eles: Crédito, Débito e Pix;
-    Pós venda: Acompanhar o status do pedido;
+---
 
-  Para Administradores:
-    Login: Login especifico;
-    Painel de gerenciamento: Gerenciar os pedidos feitos e mudar o status para "Entregue"/"Pendente";
+## 📝 **Descrição do Projeto**
+
+O **Cupcake App** é uma aplicação web desenvolvida para **digitalizar o processo de vendas** de uma confeitaria gourmet.  
+A proposta é oferecer uma **experiência completa de compra online**, com **catálogo inteligente**, **processo de pagamento simulado** e **acompanhamento de pedidos em tempo real**.  
+
+O projeto segue o padrão arquitetural **MVC (Model-View-Controller)** e foi desenvolvido utilizando a **metodologia ágil Scrum**, com entregas incrementais e foco em **melhoria contínua (Kaizen)**.
+
+---
+
+## 🎯 **Principais Funcionalidades**
+
+### 👩‍🍳 **Para Clientes**
+- 🔐 **Autenticação Completa:** Cadastro, login e recuperação de senha.  
+- 🍰 **Catálogo de Produtos:** Visualização dos cupcakes, filtros por sabor e busca por nome.  
+- 🛒 **Processo de Compra:** Adicionar ou remover itens do carrinho, escolher método de pagamento (Crédito, Débito ou Pix - simulado).  
+- 📦 **Pós-venda:** Acompanhamento do status do pedido em tempo real.
+
+### 🧑‍💼 **Para Administradores**
+- 🔑 **Login Exclusivo para Admins.**  
+- 🧾 **Painel de Gerenciamento:**  
+  - Visualização de todos os pedidos realizados.  
+  - Atualização do status do pedido: “Pendente” → “Entregue”.  
+
+---
+
+## 🧠 **Arquitetura e Metodologia**
+- **Metodologia:** Ágil (Scrum)  
+- **Padrão de Projeto:** Model-View-Controller (MVC)  
+- **Ciclo de Melhoria:** Kaizen  
+
+---
+
+## 👥 **Equipe**
+> Projeto desenvolvido como parte da disciplina **Engenharia de Software II**, com foco em integração de tecnologias web e práticas ágeis de desenvolvimento.
+
+---
+
+💡 *Cupcake App — tecnologia e sabor em um só clique!*
 
 
     
