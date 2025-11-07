@@ -10,6 +10,8 @@
 
 **Tecnologias Utilizadas**:
 
+
+
   BackEnd:
     Liguagem: Python 
     Framework: FastAPI
