@@ -33,11 +33,11 @@ def home():
 
 def create_default_admin():
     db = SessionLocal()
-    admin = db.query(models.User).filter(models.User.email == "admin@cupcake.com").first()
+    admin = db.query(models.User).filter(models.User.email == "admin@admin.com").first()
     if not admin:
         admin = models.User(
             name="Admin",
-            email="admin@cupcake.com",
+            email="admin@admin.com",
             password=utils.hash_password("1234"),
             is_admin=True
         )
