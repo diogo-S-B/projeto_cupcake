@@ -85,7 +85,7 @@ def update_order_status(
 def listar_pedidos_usuario(
     user_id: int,
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(utils.get_current_user)
+    
 ):
 
     orders = (
