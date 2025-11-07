@@ -29,13 +29,8 @@ def listar_produtos(
 def criar_produto(
     produto: schemas.ProductBase,
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(utils.get_current_user)
+
 ):
-    if not current_user.is_admin:
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="Apenas administradores podem criar produtos"
-        )
 
     novo = models.Product(**produto.dict())
     db.add(novo)
