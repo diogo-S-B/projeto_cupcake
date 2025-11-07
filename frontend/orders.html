@@ -52,7 +52,7 @@
   async function fetchOrders() {
     const ordersBody = document.getElementById("orders-body");
     try {
-      const response = await fetch(`http://127.0.0.1:8000/orders/user/${userId}`, {
+      const response = await fetch(`https://projeto-cupcake-12.onrender.com/orders/user/${userId}`, {
         headers: {
           "Authorization": `Bearer ${token}`
         }
