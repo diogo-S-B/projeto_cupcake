@@ -7,8 +7,7 @@
   Credenciais Admin (para teste):
   E-mail: admin@admin.com
   Senha: 1234
-
-
+</br>
 ___
 **Tecnologias Utilizadas**:
 
@@ -28,9 +27,8 @@ ___
     SGBD: MySQL
     Hospedagem: Aiven
     Link: cupcake-diguroos-1a48.e.aivencloud.com
-//
-
-
+___
+</br>
 **Descrição do Projeto**
 
 O projeto CupCake App foi desenvolvido para atender as principais funcionalidades de uma loja virtual que tem como objetivo digitalizar seus processos de venda.
