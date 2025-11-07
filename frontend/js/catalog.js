@@ -1,4 +1,4 @@
-const API = "http://localhost:8000";
+const API = "https://projeto-cupcake-12.onrender.com";
 const token = localStorage.getItem("token");
 
 if (!token) {
