@@ -7,7 +7,9 @@
   Credenciais Admin (para teste):
   E-mail: admin@admin.com
   Senha: 1234
-//
+
+
+---
 **Tecnologias Utilizadas**:
 
   BackEnd:
