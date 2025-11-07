@@ -7,7 +7,8 @@ MYSQL_URL = (
     "@cupcake-diguroos-1a48.e.aivencloud.com:15718/defaultdb?ssl-mode=REQUIRED"
 )
 
-engine = create_engine(MYSQL_URL)
+engine = create_engine(MYSQL_URL, connect_args={"ssl_disabled": True})
+
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
