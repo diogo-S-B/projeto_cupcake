@@ -1,4 +1,4 @@
-const API = "http://localhost:8000";
+const API = "https://projeto-cupcake-12.onrender.com";
 
 // Função de login
 async function login() {
