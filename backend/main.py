@@ -11,12 +11,13 @@ app = FastAPI(title="Cupcake App API 🍰")
 
 origins = [
     "http://localhost:8080",   
-    "https://projeto-cupcake-six.vercel.app", 
+    "https://projeto-cupcake-six.vercel.app",
+    "https://projeto-cupcake-six.vercel.app/login.html"
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
