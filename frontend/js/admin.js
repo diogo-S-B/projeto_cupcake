@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tr.innerHTML = `
           <td>${p.id}</td>
           <td>${p.user_id}</td>
-          <td>${p.items.map(i => `${i.quantity}x Produto ID ${i.product_id}`).join(", ")}</td>
+          <td>${p.items.map(i => `${i.quantity}x ${i.product.name}`).join(", ")}</td>
           <td>R$ ${p.total.toFixed(2)}</td>
           <td>${p.status}</td>
           <td>
